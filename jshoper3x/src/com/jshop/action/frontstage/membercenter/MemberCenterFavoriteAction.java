@@ -249,7 +249,7 @@ public class MemberCenterFavoriteAction extends ActionSupport {
 			List<FavoriteT>list=this.getFavoriteTService().findAllFavoriteByUserid(memberT.getId(), currentPage, lineSize);
 		
 			total=this.getFavoriteTService().countfindAllFavoriteByUserid(memberT.getId());
-			PageModel<FavoriteT>pm=new PageModel<>(currentPage, lineSize, list, total);
+			PageModel<FavoriteT>pm=new PageModel<FavoriteT>(currentPage, lineSize, list, total);
 			String action=this.getDataCollectionTAction().getBasePath()+"/findMyFavorite.action?";
 			ActionContext.getContext().put("actionlink", action);
 			ActionContext.getContext().put("sign", "disstatic");

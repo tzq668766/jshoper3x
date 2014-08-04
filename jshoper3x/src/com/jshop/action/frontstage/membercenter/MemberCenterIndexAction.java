@@ -174,7 +174,7 @@ public class MemberCenterIndexAction extends ActionSupport {
 		List<OrderT>list=this.getOrderTService().findAllOrderByorderstateForOn(currentPage, lineSize, memberid, AllOrderState.ORDERSTATE_EIGHT_NUM, AllOrderState.PAYSTATE_TWO_NUM, AllOrderState.SHIPPINGSTATE_TWO_NUM);
 	
 		total=this.getOrderTService().countfindAllOrderByorderstateForOn(memberid, AllOrderState.ORDERSTATE_EIGHT, AllOrderState.PAYSTATE_TWO_NUM, AllOrderState.SHIPPINGSTATE_TWO_NUM);
-		PageModel<OrderT>pm=new PageModel<>(currentPage, lineSize, list, total);
+		PageModel<OrderT>pm=new PageModel<OrderT>(currentPage, lineSize, list, total);
 		String action=this.getDataCollectionTAction().getBasePath()+"/initMcIndex.action?";
 		ActionContext.getContext().put("actionlink", action);
 		ActionContext.getContext().put("sign", "disstatic");
